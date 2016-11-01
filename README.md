@@ -58,6 +58,6 @@ const webpackConfig = {
 };
 ```
 
-** License
+## License
 
 This project is licensed under MIT.
