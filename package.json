@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-processing-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "HTML pre-processing and post-processing for html-webpack-plugin",
   "main": "dist/index.js",
   "scripts": {
@@ -12,8 +12,10 @@
     "url": "git+https://github.com/haoliangyu/html-webpack-processing-plugin.git"
   },
   "keywords": [
-    "npm",
-    "starter"
+    "webpack",
+    "html",
+    "post-processing",
+    "pre-processing"
   ],
   "author": "Haoliang Yu <haholiang.yu@outlook.com>",
   "license": "MIT",
