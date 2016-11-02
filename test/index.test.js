@@ -1,5 +1,4 @@
 const Promise = require('bluebird');
-const path = require('path');
 const fs = require('fs');
 const webpack = Promise.promisify(require('webpack'));
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -67,7 +66,7 @@ describe('HtmlWebpackProcessingPlugin', function() {
     })
     .finally(() => {
       fs.unlinkSync(OUTPUT_HTML);
-    });;
+    });
   });
 
   it('should remove the title tag', () => {
@@ -96,6 +95,6 @@ describe('HtmlWebpackProcessingPlugin', function() {
     })
     .finally(() => {
       fs.unlinkSync(OUTPUT_HTML);
-    });;
+    });
   });
 });
