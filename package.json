@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-processing-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "HTML pre-processing and post-processing for html-webpack-plugin",
   "main": "dist/index.js",
   "scripts": {
