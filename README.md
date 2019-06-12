@@ -14,7 +14,7 @@ npm install html-webpack-processing-plugin
 
 ``` javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackProcessingPlugin = require('html-webpack-processing-plugin';)
+const HtmlWebpackProcessingPlugin = require('html-webpack-processing-plugin');
 
 const webpackConfig = {
   entry: 'index.js',
