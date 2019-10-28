@@ -26,12 +26,12 @@ class HtmlWebpackProcessingPlugin {
     if (typeof htmlPluginData.plugin.options.preProcessing === 'function') {
       try {
         htmlPluginData.html = htmlPluginData.plugin.options.preProcessing(htmlPluginData.html);
-        callback(null, htmlPluginData);
+        typeof callback === 'function' && callback(null, htmlPluginData);
       } catch(err) {
-        callback(err);
+        typeof callback === 'function' && callback(err);
       }
     } else {
-      callback(null, htmlPluginData);
+      typeof callback === 'function' && callback(null, htmlPluginData);
     }
   }
 
@@ -39,12 +39,12 @@ class HtmlWebpackProcessingPlugin {
     if (typeof htmlPluginData.plugin.options.postProcessing === 'function') {
       try {
         htmlPluginData.html = htmlPluginData.plugin.options.postProcessing(htmlPluginData.html);
-        callback(null, htmlPluginData);
+        typeof callback === 'function' && callback(null, htmlPluginData);
       } catch(err) {
-        callback(err);
+        typeof callback === 'function' && callback(err);
       }
     } else {
-      callback(null, htmlPluginData);
+      typeof callback === 'function' && callback(null, htmlPluginData);
     }
   }
 }
