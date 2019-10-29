@@ -1,31 +1,33 @@
 # html-webpack-processing-plugin
 
+![npm](https://img.shields.io/npm/v/html-webpack-processing-plugin) ![NPM](https://img.shields.io/npm/l/html-webpack-processing-plugin) [![Build Status](https://www.travis-ci.org/haoliangyu/html-webpack-processing-plugin.svg?branch=master)](https://www.travis-ci.org/haoliangyu/html-webpack-processing-plugin)
+
 HTML pre-processing and post-processing for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin).
 
 ## Installation
 
-``` bash
+```bash
 npm install html-webpack-processing-plugin
 ```
 
 ## Usage
 
-* add pre-processor
+- add pre-processor
 
-``` javascript
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackProcessingPlugin = require('html-webpack-processing-plugin');
+```javascript
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackProcessingPlugin = require("html-webpack-processing-plugin");
 
 const webpackConfig = {
-  entry: 'index.js',
+  entry: "index.js",
   output: {
-    path: 'dist',
-    filename: 'index_bundle.js'
+    path: "dist",
+    filename: "index_bundle.js"
   },
   plugins: [
     new HtmlWebpackPlugin({
       preProcessing: originalHTML => {
-        let newHTML = originalHTML + '<div></div>';
+        let newHTML = originalHTML + "<div></div>";
         return newHTML;
       }
     }),
@@ -34,9 +36,9 @@ const webpackConfig = {
 };
 ```
 
-* add post-processor
+- add post-processor
 
-``` javascript
+```javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackProcessingPlugin = require('html-webpack-processing-plugin';)
 
