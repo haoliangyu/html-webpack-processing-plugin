@@ -9,17 +9,22 @@ class HtmlWebpackProcessingPlugin {
   apply(compiler) {
     let self = this;
 
-    compiler.plugin('compilation', compilation => {
-      compilation.plugin('html-webpack-plugin-before-html-processing', (htmlPluginData, callback) => {
-        self.preProcessing(htmlPluginData, callback);
-      });
+    compiler.hooks.compilation.tap('HTMLWebpackProcessingPlugin', compilation => {
+      HtmlWebpackPlugin.getHooks(compilation).afterTemplateExecution.tap(
+        'HTMLWebpackProcessingPlugin',
+        (htmlPluginData, callback) => {
+          self.preProcessing(htmlPluginData, callback);
+        }
+      );
     });
-
-    compiler.plugin('compilation', compilation => {
-      compilation.plugin('html-webpack-plugin-after-html-processing', (htmlPluginData, callback) => {
-        self.postProcessing(htmlPluginData, callback);
-      });
-    });
+    compiler.hooks.compilation.tap('HTMLWebpackProcessingPlugin', compilation => {
+      HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tap(
+        'HTMLWebpackProcessingPlugin',
+        (htmlPluginData, callback) => {
+          self.postProcessing(htmlPluginData, callback);
+        }
+      );
+   });
   }
 
   preProcessing(htmlPluginData, callback) {
