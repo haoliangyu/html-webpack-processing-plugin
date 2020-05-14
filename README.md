@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/html-webpack-processing-plugin)](https://www.npmjs.com/package/html-webpack-processing-plugin) [![NPM](https://img.shields.io/npm/l/html-webpack-processing-plugin)](https://github.com/haoliangyu/html-webpack-processing-plugin/blob/master/LICENSE) [![Build Status](https://www.travis-ci.org/haoliangyu/html-webpack-processing-plugin.svg?branch=master)](https://www.travis-ci.org/haoliangyu/html-webpack-processing-plugin)
 
-HTML pre-processing and post-processing for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin).
+HTML pre-processing and post-processing for [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin). It supports webpack v4.
 
 ## Installation
 
@@ -22,17 +22,17 @@ const webpackConfig = {
   entry: "index.js",
   output: {
     path: "dist",
-    filename: "index_bundle.js"
+    filename: "index_bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      preProcessing: originalHTML => {
+      preProcessing: (originalHTML) => {
         let newHTML = originalHTML + "<div></div>";
         return newHTML;
-      }
+      },
     }),
-    new HtmlWebpackProcessingPlugin()
-  ]
+    new HtmlWebpackProcessingPlugin(),
+  ],
 };
 ```
 
