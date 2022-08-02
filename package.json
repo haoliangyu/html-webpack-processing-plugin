@@ -42,6 +42,6 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "html-webpack-plugin": "^4.3.0"
+    "html-webpack-plugin": ">=4.3.0"
   }
 }
